@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static "css/n1.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+{% block content %}
+<div class="main">
+    <div id="circle">
+        <div id="triangle-left"></div>
+        <div class="top">
+            <img class="logo" src="{% static "img/logo.png" %}" alt="">
+            <h1 class="title"><b>TRAVEL TRIP</b></h1>
+        </div>
+    </div>
+    <nav class="navbar sticky-top" style="background: none">
+        <ul class="nav">
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'logout' %}">LOGOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'package' %}">PACKAGES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'flights' %}">FLIGHTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'hotels' %}">HOTELS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'dashboard' %}">DASHBOARD</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login_url' %}">LOGIN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register_url' %}">REGISTER</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'package' %}">PACKAGES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'flights' %}">FLIGHTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'hotels' %}">HOTELS</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+{% endblock %}
+</body>
+</html>

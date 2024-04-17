@@ -1,0 +1,16 @@
+.btn0{
+    margin-left:230px;
+    transform: translateX(0px) translateY(0px);
+  }
+  .mts{
+    font-family:'Viga';
+    margin-left:45%;
+    transform: translateX(-150px) translateY(0px)
+  }
+  .vil{
+    background: url(./imge/washington.jpg);
+    height:130vh;
+  }
+  .container0{
+    opacity: 0.8;
+  }
