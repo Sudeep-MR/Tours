@@ -1,1 +1,1 @@
-Travel and Tourism website developwd using python with django 
+Travel and Tourism website developed using python with django 
